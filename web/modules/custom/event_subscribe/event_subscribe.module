@@ -1,0 +1,8 @@
+<?php
+use Drupal\event_subscribe\NodeEvent;
+
+function event_subscribe_node_insert(Drupal\Core\Entity\EntityInterface $entity) {
+    $dispatcher = \Drupal::service('event_dispatcher');
+    $event = new NodeEvent($entity);
+    $dispatcher->dispatch(NodeEvent::NODE, $event);
+}

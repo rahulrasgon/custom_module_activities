@@ -1,0 +1,23 @@
+simple.form:
+  path: '/simple-form'
+  defaults:
+    _form: '\Drupal\custom_form\Form\SimpleForm'
+    _title: 'Simple Form'
+  requirements:
+    _permission: 'access content'
+
+advance.form:
+  path: '/dic-form'
+  defaults:
+    _form: '\Drupal\custom_form\Form\AdvanceForm'
+    _title: 'Advance Form'
+  requirements:
+    _permission: 'access content'
+
+weather.form:
+  path: '/admin/weather-config'
+  defaults:
+    _form: '\Drupal\custom_form\Form\WeatherForm'
+    _title: 'Weather Form'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,19 @@
+<?php
+/**
+ * Implements hook_theme().
+ */
+function custom_form_theme($existing, $type, $theme, $path) {
+  return [
+    'weather_template' => [
+      'variables' => [
+        'temp_min' => NULL,
+        'temp_max' => NULL,
+        'pressure' => NULL,
+        'humidity' => NULL,
+        'speed' => NULL,
+        'city' => NULL,
+      ],
+      'template' => 'weather-template',
+    ],
+  ];
+}

@@ -1,0 +1,8 @@
+name: Custom Form
+description: Custom module for implementing Form API.
+package: Custom
+type: module
+version: 1.0
+core: 8.x
+dependencies:
+    - block

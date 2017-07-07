@@ -1,0 +1,28 @@
+training.content:
+  path: '/static-content'
+  defaults:
+    _controller: '\Drupal\training_module\Controller\HelloController::static_callback'
+    _title: 'Static Content Page'
+
+
+
+training.dynamic:
+  path: '/arg-demo/{arg}'
+  defaults:
+    _controller: '\Drupal\training_module\Controller\HelloController::dynamic_listing_callback'
+    _title: 'Dynamic listing'
+    arg: '0'
+  requirements:
+    _permission: 'access training content'
+
+training.node:
+  path: '/list/{node}'
+  defaults:
+    _controller: '\Drupal\training_module\Controller\HelloController::listing_callback'
+    _title: 'Node Detail'
+  requirements:
+     _access_check_training_module: 'TRUE'
+  options:
+    parameters:
+      node:
+        type: entity:node

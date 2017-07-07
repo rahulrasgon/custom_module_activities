@@ -1,0 +1,6 @@
+name: Google Book Module
+description: Custom module for Extracting information about google books.
+package: Custom
+type: module
+version: 1.0
+core: 8.x

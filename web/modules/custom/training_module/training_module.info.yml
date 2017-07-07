@@ -1,0 +1,6 @@
+name: Training Module
+description: Custom module for implementing Training activities.
+package: Custom
+type: module
+version: 1.0
+core: 8.x

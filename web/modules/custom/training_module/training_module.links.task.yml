@@ -1,0 +1,11 @@
+training.tab_1:
+  route_name : training.content
+  title: Tab1
+  base_route: training.form
+  weight: 10
+
+training.tab_2:
+  route_name: training.dynamic
+  title: Tab2
+  base_route: training.form
+  weight: 20

@@ -1,0 +1,6 @@
+training.admin:
+  title: 'Training module settings'
+  description: 'example of how to make an admin settings page link'
+  parent: system.admin_config_system
+  route_name: training.content
+  weight: 100

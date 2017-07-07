@@ -1,0 +1,6 @@
+services:
+  access_check.training_module:
+    class: Drupal\training_module\Access\CustomAccessCheck
+    arguments: ['@current_user']
+    tags:
+      - { name: access_check , applies_to: _access_check_training_module}

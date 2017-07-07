@@ -1,0 +1,8 @@
+services:
+  custom_form.training:
+    class: Drupal\custom_form\services\DatabaseQuery
+    arguments: ['@database']
+
+  custom_block.weather:
+    class: Drupal\custom_form\services\CustomGuzzleHttp
+

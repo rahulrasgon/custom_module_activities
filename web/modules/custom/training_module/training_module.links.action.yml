@@ -1,0 +1,5 @@
+training.add:
+  route_name: node.add_page
+  title: 'Add content'
+  appears_on:
+    - training.node
