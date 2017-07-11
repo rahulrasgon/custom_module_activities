@@ -30,8 +30,8 @@ class ExtractGoogleBook extends BlockBase {
       // kint(config['book_block_name']);
       $book = $this->fetcher->forISBN($config['book_block_name']);
       //  $check=$book->publishedDate->getTimestamp();
-      //   kint($check);
-      //  // kint($book->publishedDate->date);
+        // kint($book);
+       // kint($book->publishedDate->format('d M Y'));
       // exit();
         return [
         '#type' => 'inline_template',
@@ -44,7 +44,7 @@ class ExtractGoogleBook extends BlockBase {
         '#context' => [
             'title' => $book->title,
             'authors' => $book->authors[0],
-            'publishedDate' => date('Y-m-d',$book->publishedDate->getTimestamp()),
+            'publishedDate' => $book->publishedDate->format('d M Y'),
             'pageCount' => $book->pageCount,
             'publisher' => $book->publisher,
             'averageRating' =>$book->averageRating,

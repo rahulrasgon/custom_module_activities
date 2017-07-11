@@ -3,7 +3,8 @@ training.content:
   defaults:
     _controller: '\Drupal\training_module\Controller\HelloController::static_callback'
     _title: 'Static Content Page'
-
+  requirements:
+    _permission: 'access training content'
 
 
 training.dynamic:
