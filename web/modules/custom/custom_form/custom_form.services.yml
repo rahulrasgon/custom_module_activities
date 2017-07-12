@@ -6,3 +6,7 @@ services:
   custom_block.weather:
     class: Drupal\custom_form\services\CustomGuzzleHttp
 
+  config_name:
+    class: Drupal\custom_form\services\WeatherParamConverter
+    tags:
+      - { name: paramconverter }

@@ -1,0 +1,53 @@
+# This migration shows importing from a single XML file.
+id: users_import
+label: Users Import
+migration_group: default
+source:
+  plugin: url
+  # This is one or more fully-qualified URLs or file paths.
+  urls: 'public://source/users.xml'
+  data_fetcher_plugin: http
+  data_parser_plugin: xml
+  # In pages_content.xml, <pages> is the outer element, and each item
+  # we want to import is a <page> element.
+  # The item_selector value is the xpath to use to query the elements.
+  item_selector: /users/user
+  # Under 'fields', we list the data items to be imported. The first level keys
+  # are the source field names we want to populate (the names to be used as
+  # sources in the process configuration below). For each field we're importing,
+  # we provide a label (optional - this is for display in migration tools) and
+  # an xpath for retrieving that value. It's important to note that this xpath
+  # is relative to the elements retrieved by item_xpath.
+  fields:
+    -
+      name: user_id
+      label: 'ID of the user'
+      selector: id
+    -
+      name: user_name
+      label: 'Name of the user'
+      selector: name
+    -
+      name: user_email
+      label: 'Email of the user'
+      selector: email
+
+  # Under 'ids', we identify source fields populated above which will uniquely
+  # identify each imported item.
+  ids:
+    user_id:
+      type: integer
+process:
+  name:
+    plugin: dedupe_entity
+    field: name
+    entity_type: user
+    source: user_name
+  mail: user_email
+  init: user_email
+  status:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: entity:user
+migration_dependencies: {}

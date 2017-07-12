@@ -21,3 +21,16 @@ weather.form:
     _title: 'Weather Form'
   requirements:
     _permission: 'access content'
+
+weather.upcast:
+  path: '/upcast/{config_name}'
+  defaults:
+    config_name: 'weather.settings'
+    _title: 'Parameter upcasting'
+    _controller: '\Drupal\custom_form\Controller\Parameter::parameterUpcast'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      config_name:
+        type: config_name

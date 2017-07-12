@@ -1,0 +1,8 @@
+name: Migrate XML to Drupal 8
+type: module
+package: Custom
+core: 8.x
+description: 'XML to Drupal 8 Custom Migration Module.'
+dependencies:
+  - migrate_tools
+  - migrate_plus
